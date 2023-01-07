@@ -1,3 +1,4 @@
+//https://leetcode.cn/problems/final-value-of-variable-after-performing-operations/
 #include <iostream>
 #include <vector>
 #include <string.h>
@@ -5,31 +6,28 @@
 using namespace std;
 
 class Solution {
-private: int ret=0;
 public:
     int finalValueAfterOperations(vector<string>& operations) {
-        for (int i=operations.size(); i>0; i--) {
-            if (operations[i] == "X++" || operations[i] == "++X") {
-                ret += 1; 
+        int x = 0;
+        for (auto &op : operations) {
+            if (op == "X++" || op == "++X") {
+                x++;
             } else {
-                ret -= 1;
+                x--;
             }
         }
-        return ret;
+        return x;
     }
 };
 
 int main(void)
 {
-    cout << "Hello world!" << endl;
-    vector<string> op = {"--X","X++","X++"};
-
     Solution * sol = new Solution;
-    int a = sol->finalValueAfterOperations(op);
-
+    int a = 0;
+    vector<string> operations = {"++X","++X","X++"};
+    a = sol->finalValueAfterOperations(operations);
     cout << a << endl;
 
     delete(sol);
-
     return 0;
 }
