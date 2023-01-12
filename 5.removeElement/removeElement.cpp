@@ -8,23 +8,17 @@ using namespace std;
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
-        uint8_t flag = 0;
-        uint8_t p1 = 0;
-        for (uint8_t i=0; i < nums.size(); i++) {
-            if (nums[i] == val) {
-                flag++;
-            } else {
-                if (flag != 0) {
-                    nums[p1] = nums[i];
-                    flag--;
-                }
-                p1++;
-                
+        uint8_t left = 0;
+        for (uint8_t right = 0; right < nums.size(); right++) {
+            if (nums[right] != val) {
+                nums[left] = nums[right];
+                left++;
             }
         }
-        return (int)p1;
+        return (int)left;
     }
 };
+
 
 int main(void)
 {
