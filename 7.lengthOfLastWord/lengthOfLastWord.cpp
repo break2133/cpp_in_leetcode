@@ -31,7 +31,7 @@ int main(void)
 {
     Solution * sol = new Solution;
 
-    string s = "aaa    bnna           ";
+    string s = "a";
 
     cout << sol->lengthOfLastWord(s);
 
