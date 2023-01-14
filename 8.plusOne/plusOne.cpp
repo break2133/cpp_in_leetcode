@@ -8,9 +8,9 @@ using namespace std;
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
-        for (uint8_t i=0; i<digits.size(); i++) {
+        for (int i=0; i<digits.size(); i++) {
             if (digits[i] != 9) {
-                for (uint8_t j=digits.size()-1; j>=0; j--) {
+                for (int j=digits.size()-1; j>=0; j--) {
                     if (digits[j] != 9) {
                         digits[j] +=1;
                         break;
