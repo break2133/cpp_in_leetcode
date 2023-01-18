@@ -34,6 +34,8 @@ int main(void)
 {
     Solution * sol = new Solution;
 
+    cout << sol->addBinary("1001100", "10") << endl;
+
     delete(sol);
     return 0;
 }
